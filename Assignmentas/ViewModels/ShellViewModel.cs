@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using Assignmentas.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +9,16 @@ using System.Windows;
 
 namespace Assignmentas.ViewModels
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<object>
     {
-        public void LoginButton(String UserName)
+        private LoginViewModel _loginVM;
+
+        public ShellViewModel(LoginViewModel loginVM)
         {
-            MessageBox.Show(String.Format("Welcome {0}",UserName));
+            _loginVM = loginVM;
+            ActivateItem(_loginVM);
         }
+
+
     }
 }
