@@ -4,92 +4,143 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assignmentas.Views"
+             xmlns:cal="http://www.caliburnproject.org" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodels="clr-namespace:Assignmentas.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
              mc:Ignorable="d" 
-             Background="White"
-             d:DesignHeight="550" d:DesignWidth="1000">
-    <Grid>
+             Background="Transparent" FontFamily="Montserrat"
+             Height="600" Width="800">
+
+       
+    <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition/>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <!--Background-->
-        <StackPanel
-            Grid.Column="0" Margin="0,50,0,-50">
-            <StackPanel.Background>
-                <ImageBrush ImageSource="/Assignmentas;component/Pictures/undraw_Lighthouse_frb8.png" Stretch="UniformToFill"/>
-            </StackPanel.Background>
-        </StackPanel>
-        <!--Welcome-->
-        <TextBlock
-            Grid.Column="1"
-            Grid.Row="0"
-            Margin="0,15,130,0"
-            FontSize="30"
-            HorizontalAlignment="Right" Height="40" VerticalAlignment="Top">
-            <Run Text="Welcome"/>
-            <Run FontWeight="Bold" Text="Login"/>
+        <!--Welcome Grid-->
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFAEECFF">
 
-        </TextBlock>
-        <!--Grid for login Ui-->
-        <Grid 
-              Grid.Column="1"
-              Width="400"
-              VerticalAlignment="Center"
-              HorizontalAlignment="Right" Height="426" Margin="0,102,46,14">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="230"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" 
+                               Margin="0 15 0 0"
+                               FontSize="85"
+                               FontFamily="/Assignmentas;component/fontss/#Montserrat SemiBold" 
+                               TextAlignment="Center" 
+                               Text="Welcome"/>
+                <materialDesign:PackIcon 
+                               Grid.Row="1" 
+                               Margin="0 0 0 0"
+                               Kind="AccountCircle"
+                               Height="220"
+                               Width="220"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center" />
+                <TextBlock Grid.Row="2" 
+                               Margin="30 10 30 0"
+                               FontSize="25"
+                               FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" 
+                               TextAlignment="Center" 
+                               Text="Name:"/>
+                <TextBlock Grid.Row="3" 
+                               Margin="30 0 30 0"
+                               FontSize="25"
+                               FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" 
+                               TextAlignment="Center" 
+                               Text="ID:"/>
+                <TextBlock Grid.Row="4" 
+                               Margin="30 -10 30 0"
+                               FontSize="25"
+                               FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" 
+                               TextAlignment="Center" 
+                               Text="Birthday:"/>
+                <Button
+                               Grid.Row="5"
+                               Style="{StaticResource MaterialDesignRaisedLightButton}"
+                               Content="TIME OUT" Width="230"  Height="60" 
+                               FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" 
+                               FontSize="20"
+                               materialDesign:ButtonAssist.CornerRadius="15"/>
+            </Grid>
 
+            <!--Time in TIme out grid-->
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <SolidColorBrush Color = "WhiteSmoke"/>
+            </Grid.Background>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="230"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <!--Email Textbox-->
-            <TextBlock 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Grid.Row="2"
-                Text="Email" FontWeight="Bold"/>
-            <TextBox
-                Name="LoginTextBox"
-                Grid.Row="2"
-                Height="30"
-                Width="275"
-                Grid.Column="2"
-                TextAlignment="Left" TextWrapping="Wrap"
-                >
-            </TextBox>
-            <!--Password Textbox-->
-            <TextBlock
-                Grid.Row="3"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Text="Password" FontWeight="Bold"
-                />
-            <PasswordBox
-                x:Name="LoginPassBox"
-                Grid.Row="3"
-                Grid.Column="2"
-                Height="30"
-                Width="275"
-                />
-            <Button
-                Margin="96,0,134,1"
-                Width="100"
-                Grid.Column="1"
-                Grid.Row="5" Height="Auto"
-                >
-                Login
-            </Button>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FFCDCDCD" RenderingBias="Quality" ShadowDepth="1"/>
+            </Grid.Effect>
+
+            <!--Time in-->
+            <StackPanel Grid.Row="1">
+                <Grid>
+                    <Button 
+                      Style="{StaticResource MaterialDesignRaisedLightButton}"
+                      Content="TIME IN" Width="230"  Height="60" 
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" 
+                      FontSize="20" 
+                      materialDesign:ButtonAssist.CornerRadius="15"  />
+                </Grid>
+            </StackPanel>
+
+            <!--Time out-->
+            <StackPanel Grid.Row="2">
+                <Grid>
+                    <Button
+                      Style="{StaticResource MaterialDesignRaisedLightButton}"
+                      Content="TIME OUT" Width="230"  Height="60" 
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" FontSize="20" 
+                      materialDesign:ButtonAssist.CornerRadius="15"
+                        />
+                </Grid>
+            </StackPanel>
+
+            <!--Settings-->
+            <StackPanel Grid.Row="4">
+                <Grid>
+                    <Button
+                      Style="{StaticResource MaterialDesignRaisedLightButton}"
+                      Content="Settings" Width="230"  Height="60" 
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" FontSize="20" 
+                      Margin="5" 
+                      materialDesign:ButtonAssist.CornerRadius="15"  />
+                </Grid>
+            </StackPanel>
+
+            <!--About-->
+            <StackPanel Grid.Row="5">
+                <Button
+                        
+                        ToolTip="CLICK ME!"
+                       Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}"
+                       Margin="12,0,228,0" 
+                    materialDesign:ButtonAssist.CornerRadius="15">
+                    <materialDesign:PackIcon Kind="InformationVariant"/>
+                </Button>
+
+            </StackPanel>
         </Grid>
+
     </Grid>
 </UserControl>

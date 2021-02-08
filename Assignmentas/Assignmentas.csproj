@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\TimeInViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -107,6 +108,25 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="fontss\Montserrat-Black.ttf" />
+    <Resource Include="fontss\Montserrat-BlackItalic.ttf" />
+    <Resource Include="fontss\Montserrat-Bold.ttf" />
+    <Resource Include="fontss\Montserrat-BoldItalic.ttf" />
+    <Resource Include="fontss\Montserrat-ExtraBold.ttf" />
+    <Resource Include="fontss\Montserrat-ExtraBoldItalic.ttf" />
+    <Resource Include="fontss\Montserrat-ExtraLight.ttf" />
+    <Resource Include="fontss\Montserrat-ExtraLightItalic.ttf" />
+    <Resource Include="fontss\Montserrat-Italic.ttf" />
+    <Resource Include="fontss\Montserrat-Light.ttf" />
+    <Resource Include="fontss\Montserrat-LightItalic.ttf" />
+    <Content Include="fontss\Montserrat-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="fontss\Montserrat-MediumItalic.ttf" />
+    <Resource Include="fontss\Montserrat-SemiBold.ttf" />
+    <Resource Include="fontss\Montserrat-SemiBoldItalic.ttf" />
+    <Resource Include="fontss\Montserrat-Thin.ttf" />
+    <Resource Include="fontss\Montserrat-ThinItalic.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +137,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Connection\" />
     <Folder Include="Models\" />
     <Folder Include="Pages\" />
   </ItemGroup>
@@ -126,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeInView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
