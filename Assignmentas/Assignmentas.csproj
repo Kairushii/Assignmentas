@@ -79,6 +79,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\TimeInViewModel.cs" />
@@ -87,6 +88,9 @@
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TimeOut.xaml.cs">
+      <DependentUpon>TimeOut.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -110,7 +114,6 @@
     </EmbeddedResource>
     <Resource Include="fontss\Montserrat-Black.ttf" />
     <Resource Include="fontss\Montserrat-BlackItalic.ttf" />
-    <Resource Include="fontss\Montserrat-Bold.ttf" />
     <Resource Include="fontss\Montserrat-BoldItalic.ttf" />
     <Resource Include="fontss\Montserrat-ExtraBold.ttf" />
     <Resource Include="fontss\Montserrat-ExtraBoldItalic.ttf" />
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TimeInView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TimeOut.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

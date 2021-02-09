@@ -4,10 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Assignmentas.Views"
-             xmlns:cal="http://www.caliburnproject.org" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:viewmodels="clr-namespace:Assignmentas.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
-             mc:Ignorable="d" 
-             Background="Transparent" FontFamily="Montserrat"
-             Height="600" Width="800">
+             xmlns:cal="http://www.caliburnproject.org" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:viewmodels="clr-namespace:Assignmentas.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:LoginViewModel}"
+             Background="Transparent" 
+             mc:Ignorable="d"
+             Height="800" Width="1024">
 
        
     <Grid >
@@ -19,9 +20,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!--Welcome Grid-->
-        <Grid Grid.Column="1" Grid.Row="1" Background="#FFAEECFF">
+        <Grid Grid.Column="1" Grid.Row="1" Background="#8BB3C9">
 
-            <Grid>
+            <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
@@ -34,6 +35,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" 
+                               Foreground="WHite"
                                Margin="0 15 0 0"
                                FontSize="85"
                                FontFamily="/Assignmentas;component/fontss/#Montserrat SemiBold" 
@@ -43,6 +45,7 @@
                                Grid.Row="1" 
                                Margin="0 0 0 0"
                                Kind="AccountCircle"
+                               Foreground="White"
                                Height="220"
                                Width="220"
                                VerticalAlignment="Center"
@@ -65,20 +68,15 @@
                                FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" 
                                TextAlignment="Center" 
                                Text="Birthday:"/>
-                <Button
-                               Grid.Row="5"
-                               Style="{StaticResource MaterialDesignRaisedLightButton}"
-                               Content="TIME OUT" Width="230"  Height="60" 
-                               FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" 
-                               FontSize="20"
-                               materialDesign:ButtonAssist.CornerRadius="15"/>
+                <TextBlock
+                               Text=""/>
             </Grid>
 
             <!--Time in TIme out grid-->
         </Grid>
         <Grid Grid.Row="1">
             <Grid.Background>
-                <SolidColorBrush Color = "WhiteSmoke"/>
+                <SolidColorBrush Color = "White"/>
             </Grid.Background>
             <Grid.RowDefinitions>
                 <RowDefinition Height="55"/>
@@ -86,20 +84,19 @@
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="230"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <Grid.Effect>
-                <DropShadowEffect BlurRadius="20" Color="#FFCDCDCD" RenderingBias="Quality" ShadowDepth="1"/>
-            </Grid.Effect>
-
             <!--Time in-->
             <StackPanel Grid.Row="1">
                 <Grid>
                     <Button 
+                      cal:Message.Attach="[Event Clicked] = [Action TimeIn]"
                       Style="{StaticResource MaterialDesignRaisedLightButton}"
                       Content="TIME IN" Width="230"  Height="60" 
-                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" 
-                      FontSize="20" 
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat SemiBold" 
+                      FontSize="20" Foreground="White" 
                       materialDesign:ButtonAssist.CornerRadius="15"  />
                 </Grid>
             </StackPanel>
@@ -109,27 +106,27 @@
                 <Grid>
                     <Button
                       Style="{StaticResource MaterialDesignRaisedLightButton}"
-                      Content="TIME OUT" Width="230"  Height="60" 
-                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" FontSize="20" 
+                      Content="TIME OUT" Width="230"  Height="60" Foreground="White"
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat SemiBold" FontSize="20" 
                       materialDesign:ButtonAssist.CornerRadius="15"
                         />
                 </Grid>
             </StackPanel>
 
             <!--Settings-->
-            <StackPanel Grid.Row="4">
+            <StackPanel Grid.Row="6">
                 <Grid>
                     <Button
                       Style="{StaticResource MaterialDesignRaisedLightButton}"
-                      Content="Settings" Width="230"  Height="60" 
-                      FontFamily="/Assignmentas;component/fontss/#Montserrat Medium" FontWeight="Bold" FontSize="20" 
-                      Margin="5" 
+                      Content="SETTINGS" Width="230"  Height="60" 
+                      FontFamily="/Assignmentas;component/fontss/#Montserrat SemiBold" FontWeight="Bold" FontSize="20" 
+                      Margin="5" Foreground="White"
                       materialDesign:ButtonAssist.CornerRadius="15"  />
                 </Grid>
             </StackPanel>
 
             <!--About-->
-            <StackPanel Grid.Row="5">
+            <StackPanel Grid.Row="7">
                 <Button
                         
                         ToolTip="CLICK ME!"

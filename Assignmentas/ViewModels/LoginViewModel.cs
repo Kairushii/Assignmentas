@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
+
 namespace Assignmentas.ViewModels
 {
     public class LoginViewModel : Screen
-
+        
     {
+
         public LoginViewModel()
         {
             
@@ -22,6 +24,9 @@ namespace Assignmentas.ViewModels
             var win = Window.GetWindow(move);
             win.DragMove();
         }
-
+        public void TimeIn()
+        {
+            
+        }
     }
 }
