@@ -45,7 +45,7 @@
             <StackPanel Grid.Row="1">
                 <Grid>
                     <Button
-                        FontSize="22"
+                        FontSize="22" Foreground="White"
                           Style="{StaticResource MaterialDesignRaisedLightButton}"
                            Content="Enter" Width="260" Height="50" Margin="0,0,0,0"/>
                 </Grid>
